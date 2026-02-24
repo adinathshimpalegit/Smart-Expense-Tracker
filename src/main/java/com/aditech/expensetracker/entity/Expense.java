@@ -16,6 +16,7 @@ public class Expense {
     private String title;
     private Double amount;
     private String category;
+    @Column(name = "expense_date")
     private LocalDate date;
 
     @ManyToOne

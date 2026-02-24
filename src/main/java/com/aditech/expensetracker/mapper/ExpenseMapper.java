@@ -2,11 +2,15 @@
 package com.aditech.expensetracker.mapper;
 
 import com.aditech.expensetracker.entity.Expense;
+
+import org.springframework.stereotype.Component;
+
 import com.aditech.expensetracker.dto.ExpenseDTO;
 
+@Component
 public class ExpenseMapper {
 
-    public static Expense toEntity(ExpenseDTO dto) {
+    public Expense toEntity(ExpenseDTO dto) {
         Expense e = new Expense();
         e.setId(dto.getId());
         e.setTitle(dto.getTitle());
@@ -16,7 +20,7 @@ public class ExpenseMapper {
         return e;
     }
 
-    public static ExpenseDTO toDTO(Expense e) {
+    public ExpenseDTO toDTO(Expense e) {
         ExpenseDTO dto = new ExpenseDTO();
         dto.setId(e.getId());
         dto.setTitle(e.getTitle());
